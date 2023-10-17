@@ -41,8 +41,13 @@ html {
   }
   .v-theme--light,
   .v-theme--dark {
+    // --v-theme-on-warning: 53, 108, 185;
+    // --v-theme-on-info: 255, 255, 255;
     --v-theme-on-warning: 255, 255, 255;
     --v-theme-on-info: 255, 255, 255;
+    --v-theme-secondary: 4, 70, 127;
+    --v-theme-primary: 242, 247, 255;
+    --v-theme-info: 255, 249, 226;
   }
   .v-card.w-auto {
     width: auto !important;
