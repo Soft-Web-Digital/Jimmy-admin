@@ -486,7 +486,7 @@
                             Approve giftcard
                           </v-list-item-title>
                         </v-list-item>
-                        <v-list-item
+                        <!-- <v-list-item
                           v-if="
                             item?.status == 'pending' &&
                             item.children_count == 0
@@ -498,7 +498,7 @@
                           <v-list-item-title>
                             Partial approval
                           </v-list-item-title>
-                        </v-list-item>
+                        </v-list-item> -->
                         <v-list-item
                           v-if="
                             item?.status == 'pending' &&

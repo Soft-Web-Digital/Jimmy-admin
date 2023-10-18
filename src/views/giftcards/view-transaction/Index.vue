@@ -91,7 +91,7 @@ const status_color = (status: StatusType) => {
     : status == "declined"
     ? "red lighten-3"
     : status == "partially_approved"
-    ? "purple lighten-3"
+    ? "green lighten-3"
     : "";
 };
 //
@@ -409,7 +409,7 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
                     density="comfortable"
                     class="text-capitalize font-weight-bold pa-3 mr-4"
                     :color="status_color(singleGiftCardTransaction?.status)"
-                    >{{ singleGiftCardTransaction?.status }}</v-chip
+                    >{{ singleGiftCardTransaction?.status == 'partially_approved' ? 'Approved' : singleGiftCardTransaction?.status }}</v-chip
                   >
                   <v-chip
                     label
@@ -503,7 +503,7 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
                 >
                   Decline
                 </v-btn>
-                <v-btn
+                <!-- <v-btn
                   color="purple lighten-3"
                   variant="tonal"
                   @click="
@@ -512,7 +512,7 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
                   "
                 >
                   Partial approval
-                </v-btn>
+                </v-btn> -->
               </v-card-actions>
             </v-card>
 

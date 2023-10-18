@@ -25,13 +25,13 @@
         <v-btn color="red lighten-3" variant="tonal" @click="disapproveAll()">
           Decline all
         </v-btn>
-        <v-btn
+        <!-- <v-btn
           color="purple lighten-3"
           variant="tonal"
           @click="partialApproveAll()"
         >
           Partial approval all
-        </v-btn>
+        </v-btn> -->
       </v-card-actions>
     </div>
 
@@ -100,7 +100,7 @@
               size="small"
               class="text-capitalize font-weight-bold pa-3"
               :color="status_color(singleGiftCardTransaction?.status)"
-              >{{ formate_text(singleGiftCardTransaction?.status) }}</v-chip
+              >{{ singleGiftCardTransaction?.status == 'partially_approved' ? 'Approved' : singleGiftCardTransaction?.status }}</v-chip
             >
           </td>
 
@@ -151,7 +151,7 @@
                   >
                     <v-list-item-title> Approve giftcard </v-list-item-title>
                   </v-list-item>
-                  <v-list-item
+                  <!-- <v-list-item
                     v-if="singleGiftCardTransaction?.status == 'pending'"
                     @click="
                       dialog = true;
@@ -161,7 +161,7 @@
                     color="secondary"
                   >
                     <v-list-item-title> Partial approval </v-list-item-title>
-                  </v-list-item>
+                  </v-list-item> -->
                   <v-list-item
                     v-if="singleGiftCardTransaction?.status == 'pending'"
                     @click="
@@ -219,7 +219,7 @@
               size="small"
               class="text-capitalize font-weight-bold pa-3"
               :color="status_color(item?.status)"
-              >{{ formate_text(item?.status) }}</v-chip
+              >{{ formate_text(item?.status == 'partially_approved' ? 'Approved' : item?.status) }}</v-chip
             >
           </td>
 
@@ -268,14 +268,14 @@
                   >
                     <v-list-item-title> Approve giftcard </v-list-item-title>
                   </v-list-item>
-                  <v-list-item
+                  <!-- <v-list-item
                     v-if="item?.status == 'pending'"
                     @click="(dialog = true), (id = item?.id)"
                     link
                     color="secondary"
                   >
                     <v-list-item-title> Partial approval </v-list-item-title>
-                  </v-list-item>
+                  </v-list-item> -->
                   <v-list-item
                     v-if="item?.status == 'pending'"
                     @click="(dialog2 = true), (id = item?.id)"
@@ -698,7 +698,7 @@ export default defineComponent({
         : status == "declined"
         ? "red lighten-3"
         : status == "partially_approved"
-        ? "purple lighten-3"
+        ? "green lighten-3"
         : "";
     };
 

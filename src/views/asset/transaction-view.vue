@@ -286,7 +286,7 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
                     density="comfortable"
                     class="text-capitalize font-weight-bold pa-3 mr-4"
                     :color="status_color(single_transactions?.status)"
-                    >{{ single_transactions?.status }}</v-chip
+                    >{{ single_transactions?.status == 'partially_approved' ? 'Approved' : single_transactions?.status }}</v-chip
                   >
                   <v-chip
                     label
@@ -354,13 +354,13 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
                 >
                   Decline
                 </v-btn>
-                <v-btn
+                <!-- <v-btn
                   color="purple lighten-3"
                   variant="tonal"
                   @click="(dialog = true), (confirmationID = single_transactions?.id)"
                 >
                   Partial approve
-                </v-btn>
+                </v-btn> -->
               </v-card-actions>
             </v-card>
 
