@@ -399,7 +399,8 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
             <v-avatar color="#FFF9C4" size="x-large">
               <vue-feather
                 type="bar-chart"
-                class="text-dark text-primary"
+                class="text-dark"
+                style="color: #b2b200;"
               ></vue-feather>
             </v-avatar>
 
