@@ -240,35 +240,6 @@ onMounted(async () => {
   );
 });
 
-var pusher = new Pusher("3dfb78cfe4587bd725fe", {
-// var pusher = new Pusher("6a554a25e5327334c7e2", {
-// var pusher = new Pusher("2bd4bb8b30b7085ba28d", {
-  cluster: "eu",
-  // cluster: "mt1",
-});
-
-var channel = pusher.subscribe("giftcards");
-channel.bind("new-giftcard", function (data: any) {
-  console.log(data);
-  // if (gift_transactions.value) {
-  //   gift_transactions.value?.data.unshift(data?.giftcard);
-  // }
-
-  if (gift_transactions.value) {
-    // Check if the logged-in user's ID is present in the giftcard_category.admins array
-    var isAdmin = data.giftcard.giftcard_product.giftcard_category.admins.some(function (admin) {
-      return admin.id === userID.value;
-    });
-
-    if (isAdmin || userID.value === "98ba57af-00f7-47fc-947b-4fd31de50d26" || userID.value === "98dd12f9-7ddb-4b3e-ac30-d41c7293d260") {
-      gift_transactions.value?.data.unshift(data?.giftcard);
-    }
-  }
-});
-
-onUnmounted(() => {
-  pusher.unsubscribe("giftcards");
-});
 const refresh = async () => {
   await getAllGiftCardTransaction(
     status.value,
