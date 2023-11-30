@@ -613,8 +613,8 @@ export default defineComponent({
           // proofs.value.push($event[index]);
           uploadImage($event[index]).then((response) => {
             startImage.value++;
-            previewList.value.push(response.secure_url);
-            reproof.value.push(response.secure_url);
+            previewList.value.push(response.url);
+            reproof.value.push(response.url);
           });
           index++;
         }
@@ -649,8 +649,8 @@ export default defineComponent({
           // proofs.value.push($event[index]);
           uploadImage($event[index]).then((response) => {
             startImage.value++;
-            previewList.value.push(response.secure_url);
-            partial_approve.review_proof.push(response.secure_url);
+            previewList.value.push(response.url);
+            partial_approve.review_proof.push(response.url);
           });
           index++;
         }

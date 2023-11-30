@@ -23,6 +23,7 @@ export default function uploadFileToImageKit(file: File): Promise<any> {
         // File uploaded successfully
         if (request.readyState === 4 && request.status === 200) {
           let response = JSON.parse(request.responseText);
+          
           resolve(response);
         }
 
@@ -41,6 +42,7 @@ export default function uploadFileToImageKit(file: File): Promise<any> {
       };
 
       request.send(formData);
+      
     }
 
   });
