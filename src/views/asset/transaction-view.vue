@@ -377,14 +377,14 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
                   <p class="my-1">Email: <span class="font-weight-bold">{{ single_transactions?.reviewer?.email ?? 'No data'}}</span></p>
                   <p>Full name: <span class="font-weight-bold">{{ single_transactions?.reviewer?.firstname }}  {{ single_transactions?.reviewer?.lastname}}</span></p>
                 </div>
-                <div class="font-weight-normal mb-4">
+                <!-- <div class="font-weight-normal mb-4">
                   <strong>Review amount:</strong>
                   {{ formatCurrency(single_transactions.review_amount) }}
                 </div> 
                 <div class="font-weight-normal mb-4">
                   <strong>Review rate:</strong>
                   {{ formatCurrency(single_transactions.review_amount / single_transactions.asset_amount) }}
-                </div> 
+                </div>  -->
                 <div class="font-weight-normal">
                   <strong>Review At: </strong>
                   <span v-if="single_transactions.reviewed_at">

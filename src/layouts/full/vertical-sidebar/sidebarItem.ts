@@ -19,13 +19,6 @@ const sidebarItem: menu[] = [
     permissions:""
   },
   {
-    title: "Withdrawals",
-    icon: "credit-card",
-    to: "/withdrawals/all",
-    permissions:"manage_wallet_transactions"
-  },
- 
-  {
     title: "Giftcard Transactions",
     icon: "gift",       
     to: "/giftcards/transaction",
@@ -39,13 +32,19 @@ const sidebarItem: menu[] = [
     permissions:"manage_asset_transactions"
   },
   {
-    title: "Top Traders",
+    title: "Withdrawals",
     icon: "credit-card",
-    to: "/top-traders/transaction",
-    permissions:""
+    to: "/withdrawals/all",
+    permissions:"manage_wallet_transactions"
   },
+  // {
+  //   title: "Top Traders",
+  //   icon: "credit-card",
+  //   to: "/top-traders/transaction",
+  //   permissions:""
+  // },
  
-  { header: "Users", group_name:"user"},
+  { header: "Management", group_name:"user"},
   {
     title: "Users",
     icon: "copy",
@@ -66,7 +65,7 @@ const sidebarItem: menu[] = [
     permissions:"manage_access_control_list"
   },
 
-  { header: "Notifications", group_name:"notification" },
+  { header: "News & Updates", group_name:"notification" },
   {
     title: "Announcements",
     icon: "bell",
@@ -74,13 +73,25 @@ const sidebarItem: menu[] = [
     permissions:'manage_alerts'
   },
   {
-    title: "Notifications",
-    icon: "user-plus",
-    to: "/notifications/all",
-    permissions:"receive_notifications"
+    title: "Banners",
+    icon: "credit-card",
+    to: "/banners",
+    permissions:"manage_system_data"
   },
+  {
+    title: "App version",
+    icon: "user-plus",
+    to: "/system-data",
+    permissions:"manage_system_data"
+  },
+  // {
+  //   title: "Notifications",
+  //   icon: "user-plus",
+  //   to: "/notifications/all",
+  //   permissions:"receive_notifications"
+  // },
 
-  { header: "Settings",  group_name:"giftcard"  },
+  { header: "Configuration",  group_name:"giftcard"  },
 
   {
     title:"GiftCard Mgt",
@@ -120,46 +131,52 @@ const sidebarItem: menu[] = [
         to: "/assets/all",
         permissions:"manage_assets"
       },
-      {
-        title: "Currencies",
-        icon: "",
-        to: "/currencies/all",
-        permissions:"manage_currencies"
-      },
+      // {
+      //   title: "Currencies",
+      //   icon: "",
+      //   to: "/currencies/all",
+      //   permissions:"manage_currencies"
+      // },
 ],
   },
   {
-    title:"Configuration",
-    icon:"command",
-    group_name:'config',
-    children: [
+    title: "Trade settings",
+    icon: "command",
+    to: "/notifications/all",
+    permissions:"receive_notifications"
+  },
+//   {
+//     title:"Configuration",
+//     icon:"command",
+//     group_name:'config',
+//     children: [
 
-      {
-        title: "Banners",
-        icon: "",
-        to: "/banners",
-        permissions:"manage_system_data"
-      },
-      {
-        title: "App version",
-        icon: "",
-        to: "/system-data",
-        permissions:"manage_system_data"
-      },
-      {
-        title: "Countries Mgt",
-        icon: "",
-        to: "/countries/all",
-        permissions:"manage_countries"
-      },
-      {
-        title: "System bank account",
-        icon: "users",
-        to: "/system-bank",
-        permissions:"manage_system_bank_accounts"
-      },
-],
-  }
+//       {
+//         title: "Banners",
+//         icon: "",
+//         to: "/banners",
+//         permissions:"manage_system_data"
+//       },
+//       {
+//         title: "App version",
+//         icon: "",
+//         to: "/system-data",
+//         permissions:"manage_system_data"
+//       },
+//       {
+//         title: "Countries Mgt",
+//         icon: "",
+//         to: "/countries/all",
+//         permissions:"manage_countries"
+//       },
+//       {
+//         title: "System bank account",
+//         icon: "users",
+//         to: "/system-bank",
+//         permissions:"manage_system_bank_accounts"
+//       },
+// ],
+//   }
 
  
 ];

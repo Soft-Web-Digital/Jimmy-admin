@@ -73,14 +73,14 @@
           <strong>Wallet balance:</strong> ₦<span>{{
             single_user.wallet_balance
           }}</span>
-          <v-btn
+          <!-- <v-btn
             class="ml-4"
             @click="
               dialog2 = true;
               id = single_user?.id;
             "
             >Finance user</v-btn
-          >
+          > -->
           <v-btn
             class="ml-4"
             color="error"
@@ -94,7 +94,7 @@
           <v-tab value="one" class="font-weight-bold">User Information</v-tab>
           <v-tab value="two" class="font-weight-bold">Asset</v-tab>
           <v-tab value="three" class="font-weight-bold">Giftcard</v-tab>
-          <v-tab value="four" class="font-weight-bold">Wallet</v-tab>
+          <!-- <v-tab value="four" class="font-weight-bold">Wallet</v-tab> -->
           <v-tab value="five" class="font-weight-bold">Referrals</v-tab>
         </v-tabs>
       </div>

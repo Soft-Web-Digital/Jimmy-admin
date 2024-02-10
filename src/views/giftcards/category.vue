@@ -252,7 +252,7 @@ const statusColor = (status: string | null) => {
           <td>{{ item?.name }}</td>
 
           <!-- <td>{{ item?.sale_term }}</td> -->
-          <td>{{ useDateFormat(item?.created_at, "DD, MMMM-YYYY").value }}</td>
+          <td>{{ useDateFormat(item?.created_at, "DD, MMMM-YYYY hh:mm a").value }}</td>
           <td>
             <v-chip label class="pa-2" :color="statusColor(item?.sale_activated_at)">
               {{ blockedStatus(item?.sale_activated_at) }}
@@ -263,29 +263,51 @@ const statusColor = (status: string | null) => {
               {{ blockedStatus(item?.purchase_activated_at) }}
             </v-chip>
           </td>
-       
+
           <td>
-            <v-icon
-              small
-              class="mr-2 text-secondary cursor-pointer"
-              @click="showDetails(item?.id)"
-              title="view"
-              >mdi-eye</v-icon
-            >
-            <v-icon
-              small
-              class="mr-2 text-primary cursor-pointer"
-              @click="editItem(item)"
-              title="Edit"
-              >mdi-pencil</v-icon
-            >
-            <v-icon
-              small
-              class="text-error cursor-pointer"
-              title="Delete"
-              @click="deleteGifCardCategories(item?.id)"
-              >mdi-delete</v-icon
-            >
+            <v-row justify="center">
+              <v-menu transition="scroll-y-transition">
+                <template v-slot:activator="{ props }">
+                  <v-btn
+                    text
+                    icon="mdi-dots-vertical"
+                    color="transparent"
+                    class="ma-2"
+                    v-bind="props"
+                  >
+                  </v-btn>
+                </template>
+                <v-list>
+                  <v-list-item
+                    @click="showDetails(item?.id)"
+                    link
+                    color="secondary"
+                  >
+                    <v-list-item-title>
+                      View Category
+                    </v-list-item-title>
+                  </v-list-item>
+                  <v-list-item
+                    @click="editItem(item)"
+                    link
+                    color="secondary"
+                  >
+                    <v-list-item-title>
+                      Edit Category
+                    </v-list-item-title>
+                  </v-list-item>
+                  <v-list-item
+                    @click="deleteGifCardCategories(item?.id)"
+                    link
+                    color="secondary"
+                  >
+                    <v-list-item-title>
+                      Delete Category
+                    </v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </v-row>
           </td>
         </tr>
       </tbody>

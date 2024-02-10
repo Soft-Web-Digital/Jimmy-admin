@@ -246,7 +246,7 @@ const filter_by = async () => {
                     <v-list-item @click="viewUsers(item?.id)" link color="secondary">
                       <v-list-item-title> View user </v-list-item-title>
                     </v-list-item>
-                    <v-list-item
+                    <!-- <v-list-item
                       @click="
                         dialog2 = true;
                         id = item?.id;
@@ -255,7 +255,7 @@ const filter_by = async () => {
                       color="secondary"
                     >
                       <v-list-item-title> Finance user </v-list-item-title>
-                    </v-list-item>
+                    </v-list-item> -->
                     <v-list-item @click="blockUsers(item?.id)" link color="secondary">
                       <v-list-item-title> {{ item?.blocked_at == null ? "Block user" : "Unblock user" }}</v-list-item-title>
                     </v-list-item>

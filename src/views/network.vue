@@ -130,7 +130,7 @@ const searching = ref(false)
               <td>{{ item.assets_count }}</td>
 
               <td>
-                {{ useDateFormat(item?.created_at, "DD, MMMM-YYYY").value }}
+                {{ useDateFormat(item?.created_at, "DD, MMMM-YYYY hh:mm a").value }}
               </td>
 
               <td>

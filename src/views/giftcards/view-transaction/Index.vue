@@ -540,7 +540,7 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
                     >
                   </p>
                 </div>
-                <div class="font-weight-normal mb-4">
+                <!-- <div class="font-weight-normal mb-4">
                   <strong>Review Rate:</strong>
                   {{
                     formatCurrency(
@@ -555,7 +555,7 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
                     formatCurrency(singleGiftCardTransaction.review_amount) ??
                     "No data"
                   }}
-                </div>
+                </div> -->
                 <div class="font-weight-normal mb-4">
                   <strong>Review At: </strong>
                   <span v-if="singleGiftCardTransaction.reviewed_at">

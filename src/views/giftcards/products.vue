@@ -68,6 +68,9 @@ const giftCardCategoryHeader = reactive([
     title: "Name",
   },
   {
+    title: "Country",
+  },
+  {
     title: "Sell Rate",
   },
   {
@@ -187,7 +190,7 @@ const activation_status = ref("");
       </v-col>
     </v-row>
   </v-card>
-  <v-card class="my-4">
+  <v-card class="my-1">
     <v-table>
       <thead>
         <tr>
@@ -204,6 +207,7 @@ const activation_status = ref("");
         <tr v-for="(item, index) in sortItems(gift_products.data)" :key="item?.id">
           <td>{{ index + 1 }}</td>
           <td>{{ item?.name }}</td>
+          <td>{{ item?.country?.name }}</td>
           <td>{{ item.sell_rate.toLocaleString() }}</td>
           <td>₦‎ {{ item.sell_min_amount.toLocaleString() }}</td>
           <td>₦‎ {{ item.sell_max_amount.toLocaleString() }}</td>
@@ -222,27 +226,49 @@ const activation_status = ref("");
             ></v-switch>
           </td>
           <td>
-            <v-icon
-              small
-              class="mr-2 text-secondary cursor-pointer"
-              @click="showDetails(item?.id)"
-              title="view"
-              >mdi-eye</v-icon
-            >
-            <v-icon
-              small
-              class="mr-2 text-primary cursor-pointer"
-              @click="editItem(item)"
-              title="Edit"
-              >mdi-pencil</v-icon
-            >
-            <v-icon
-              small
-              class="text-error cursor-pointer"
-              title="Delete"
-              @click="deleteGifCardProducts(item?.id)"
-              >mdi-delete</v-icon
-            >
+            <v-row justify="center">
+              <v-menu transition="scroll-y-transition">
+                <template v-slot:activator="{ props }">
+                  <v-btn
+                    text
+                    icon="mdi-dots-vertical"
+                    color="transparent"
+                    class="ma-2"
+                    v-bind="props"
+                  >
+                  </v-btn>
+                </template>
+                <v-list>
+                  <v-list-item
+                    @click="showDetails(item?.id)"
+                    link
+                    color="secondary"
+                  >
+                    <v-list-item-title>
+                      View Category
+                    </v-list-item-title>
+                  </v-list-item>
+                  <v-list-item
+                    @click="editItem(item)"
+                    link
+                    color="secondary"
+                  >
+                    <v-list-item-title>
+                      Edit Category
+                    </v-list-item-title>
+                  </v-list-item>
+                  <v-list-item
+                    @click="deleteGifCardProducts(item?.id)"
+                    link
+                    color="secondary"
+                  >
+                    <v-list-item-title>
+                      Delete Category
+                    </v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </v-row>
           </td>
         </tr>
       </tbody>
