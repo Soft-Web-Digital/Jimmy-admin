@@ -81,7 +81,7 @@ const sidebarItem: menu[] = [
   {
     title: "App version",
     icon: "user-plus",
-    to: "/system-data",
+    to: "/app-version",
     permissions:"manage_system_data"
   },
   // {
@@ -142,7 +142,13 @@ const sidebarItem: menu[] = [
   {
     title: "Trade settings",
     icon: "command",
-    to: "/notifications/all",
+    to: "/trading-settings",
+    permissions:"receive_notifications"
+  },
+  {
+    title: "Referral Management",
+    icon: "users",
+    to: "/referrals-management",
     permissions:"receive_notifications"
   },
 //   {

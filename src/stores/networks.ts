@@ -16,6 +16,9 @@ export const useNetworksStore = defineStore("networks", {
       wallet_address: "",
     },
     system_data:[],
+    app_version: [],
+    tradings: [],
+    referrals_management: [],
     content:"",
     single_network:{}
   }),
@@ -332,5 +335,114 @@ export const useNetworksStore = defineStore("networks", {
         this.loading = false;
       }
     },
+    async getAppVersionData() {
+      const store = useAuthStore();
+      const { notify } = useNotification();
+      this.loading = true;
+      try {
+        await ksbTechApi
+          .get(systemData, {
+            headers: {
+              Accept: "application/json",
+              Authorization: `Bearer ${store.token}`,
+            },
+          })
+          .then(
+            (res: {
+              data: {
+                message: string;
+                data: { system_data: any };
+              };
+            }) => {
+              this.loading = false;
+              notify({
+                title: "Successful",
+                text: res.data.message,
+                type: "success",
+              });
+              // this.system_data = res.data.data.system_data;
+
+              this.app_version = res.data.data.system_data.filter((item: any) => {
+                return item.code === "ANDVU" || item.code === "IOSVU";
+              });
+            }
+          );
+      } catch (error) {
+        this.loading = false;
+      }
+    },
+    async getTradingData() {
+      const store = useAuthStore();
+      const { notify } = useNotification();
+      this.loading = true;
+      try {
+        await ksbTechApi
+          .get(systemData, {
+            headers: {
+              Accept: "application/json",
+              Authorization: `Bearer ${store.token}`,
+            },
+          })
+          .then(
+            (res: {
+              data: {
+                message: string;
+                data: { system_data: any };
+              };
+            }) => {
+              this.loading = false;
+              notify({
+                title: "Successful",
+                text: res.data.message,
+                type: "success",
+              });
+              // this.system_data = res.data.data.system_data;
+
+              this.tradings = res.data.data.system_data.filter((item: any) => {
+                return item.code === "CRSSC" || item.code === "GCSSC" || item.code === "CRBSC";
+              });
+            }
+          );
+      } catch (error) {
+        this.loading = false;
+      }
+    },
+    async getReferralsManagementData() {
+      const store = useAuthStore();
+      const { notify } = useNotification();
+      this.loading = true;
+      try {
+        await ksbTechApi
+          .get(systemData, {
+            headers: {
+              Accept: "application/json",
+              Authorization: `Bearer ${store.token}`,
+            },
+          })
+          .then(
+            (res: {
+              data: {
+                message: string;
+                data: { system_data: any };
+              };
+            }) => {
+              this.loading = false;
+              notify({
+                title: "Successful",
+                text: res.data.message,
+                type: "success",
+              });
+              // this.system_data = res.data.data.system_data;
+
+              this.referrals_management = res.data.data.system_data.filter((item: any) => {
+                return item.code === "REFMA" || item.code === "REFRA";
+              });
+            }
+          );
+      } catch (error) {
+        this.loading = false;
+      }
+    },
+    
   },
 });

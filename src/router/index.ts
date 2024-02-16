@@ -198,6 +198,27 @@ const router = createRouter({
             import("@/views/system-data.vue"),
             meta: { requiresAuth: true}
         },
+        {
+          name: "App Version",
+          path: "/app-version",
+          component: () =>
+            import("@/views/app-version.vue"),
+            meta: { requiresAuth: true}
+        },
+        {
+          name: "Trading Settings",
+          path: "/trading-settings",
+          component: () =>
+            import("@/views/trading-settings.vue"),
+            meta: { requiresAuth: true}
+        },
+        {
+          name: "Referral Management",
+          path: "/referrals-management",
+          component: () =>
+            import("@/views/referral-man.vue"),
+            meta: { requiresAuth: true}
+        },
       ],
     },
     {
