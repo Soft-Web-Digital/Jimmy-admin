@@ -306,8 +306,8 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
           >Cancel</v-btn
         >
         <v-btn
-          color="primary"
-          class="body-2 font-weight-bold"
+          color="success"
+          response.url
           outlined
           @click.native="makeConfirmation(confirmationStatus)"
           >Yes</v-btn
@@ -627,7 +627,7 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
                       </v-list-item>
                       <v-list-item
                         v-if="
-                          item?.status == 'pending' && item?.children_count == 0
+                          item?.status == 'pending' && item?.children_count == 1000 
                         "
                         @click="openConfirmationDialog('approve', item?.id)"
                         link
@@ -651,7 +651,7 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
                       </v-list-item> -->
                       <v-list-item
                         v-if="
-                          item?.status == 'pending' && item.children_count == 0
+                          item?.status == 'pending' && item.children_count == 1000
                         "
                         @click="(dialog2 = true), (confirmationID = item?.id)"
                         link

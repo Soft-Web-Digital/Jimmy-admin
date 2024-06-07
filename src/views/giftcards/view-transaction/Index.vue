@@ -286,7 +286,7 @@ watch([dialog, dialog2], ([newDialog, oldDialog], [newDialog2, oldDialog2]) => {
           >Cancel</v-btn
         >
         <v-btn
-          color="primary"
+          color="success"
           class="body-2 font-weight-bold"
           outlined
           @click.native="makeConfirmation(confirmationStatus)"

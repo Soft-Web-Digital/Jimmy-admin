@@ -984,7 +984,7 @@
           >Cancel</v-btn
         >
         <v-btn
-          color="primary"
+          color="success"
           class="body-2 font-weight-bold"
           outlined
           @click.native="makeConfirmation(confirmationStatus), confirmationDialog = false"
